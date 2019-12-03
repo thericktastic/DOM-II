@@ -4,6 +4,9 @@ const funBusLogo = document.querySelector(".logo-heading");
 const funBusHdrImg = document.querySelector("img");
 const pTags = document.getElementsByTagName("p");
 const letsGo = document.getElementById("gogogo");
+const mapImg = document.getElementById("map");
+const selectPick = document.getElementById("pick");
+const footer = document.querySelector("footer");
 
 // Event 1 - mouseover
 funBusLogo.addEventListener("mouseover", () => {
@@ -48,31 +51,26 @@ funBusHdrImg.addEventListener("contextmenu", () => {
     funBusHdrImg.style.transition = "transform 3s";
 })
 
-// Event 7 - wheel
-letsGo.addEventListener("wheel", () => {
-    letsGo.style.color = "red";
+// Event 7 - dblclick
+mapImg.addEventListener("dblclick", () => {
+    mapImg.style.transform = "scale(1.5)";
+    mapImg.style.transition = "transform 2s";
 })
 
+// Event 8 - keydown
+document.addEventListener("keydown", () => {
+    selectPick.style.color = "red";
+})
 
+// Event 9 - scroll
+document.querySelectorAll("img").forEach((element) => {
+    document.addEventListener("scroll", () => {
+      element.style.transform = "scale(1.1)";
+      element.style.transition = "transform 3s";
+    });
+  });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// letsGo.addEventListener("wheel", () => {
-//     letsGo.style.color = "red";
-//     console.log("work");
-// })
+// Event 10 - keyup
+document.addEventListener("keyup", () => {
+    footer.style.backgroundColor = "#FFD800";
+})
