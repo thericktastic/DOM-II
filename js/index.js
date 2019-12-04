@@ -75,6 +75,7 @@ document.addEventListener("keyup", () => {
   footer.style.backgroundColor = "#FFD800";
 });
 
+
 // Stop propagation
 const body = document.querySelector("body");
 body.addEventListener("click", () => {
